@@ -559,11 +559,7 @@ int print_double_tree(void) {
 int free_all(void) {
 	int i;
 	struct HT_Task *temp, *next;
-	/*for(i=0; i<max_tasks_g; i++){
-		free(array1[i]);
-		free(array2[i]);
-		free(array3[i]);
-	}*/
+	
 	free(array1);
 	free(array2);
 	free(array3);
@@ -574,7 +570,7 @@ int free_all(void) {
 		while(temp!=NULL){
 			next=temp->next;
 			free(temp);
-			temp=temp->next;
+			temp=next;
 		}
 	}
 	free(general_tasks_ht.tasks);
